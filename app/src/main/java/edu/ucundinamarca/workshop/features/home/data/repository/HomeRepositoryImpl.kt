@@ -23,7 +23,7 @@ class HomeRepositoryImpl @Inject constructor(
             emit(Result.failure(e))
         }
 
-        /* --- DESCOMENTAR PARA FIREBASE FIRESTORE ---
+        /* --- FIREBASE FIRESTORE ---
         callbackFlow {
             val subscription = firestore.collection("home").document("info")
                 .addSnapshotListener { snapshot, error ->

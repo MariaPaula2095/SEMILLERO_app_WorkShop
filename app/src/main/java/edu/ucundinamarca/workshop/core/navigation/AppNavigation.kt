@@ -10,6 +10,7 @@ import edu.ucundinamarca.workshop.features.attendance.presentation.navigation.at
 import edu.ucundinamarca.workshop.features.home.presentation.navigation.homeScreen
 import edu.ucundinamarca.workshop.features.schedule.presentation.navigation.scheduleScreen
 import edu.ucundinamarca.workshop.shared.presentation.navigation.webViewScreen
+import edu.ucundinamarca.workshop.features.ai_chat.presentation.navigation.aiChatScreen
 
 @Composable
 fun AppNavigation(modifier: Modifier = Modifier) {
@@ -32,6 +33,9 @@ fun AppNavigation(modifier: Modifier = Modifier) {
             },
             onNavigateToWebView = { url ->
                 navController.navigate(Route.WebView(url = url))
+            },
+            onNavigateToAiChat = {
+                navController.navigate(Route.AiChat)
             }
         )
 
@@ -68,6 +72,12 @@ fun AppNavigation(modifier: Modifier = Modifier) {
         )
 
         privacyScreen(
+            onNavigateBack = {
+                navController.popBackStack()
+            }
+        )
+
+        aiChatScreen(
             onNavigateBack = {
                 navController.popBackStack()
             }

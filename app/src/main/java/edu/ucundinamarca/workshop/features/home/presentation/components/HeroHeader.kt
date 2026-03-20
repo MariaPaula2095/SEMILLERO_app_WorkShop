@@ -77,7 +77,7 @@ fun HeroHeader(
                 }
             }
         }
-        
+
         Row(
             modifier = Modifier
                 .padding(spacing.medium)

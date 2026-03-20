@@ -24,6 +24,8 @@ import edu.ucundinamarca.workshop.features.home.presentation.components.HomeShim
 import edu.ucundinamarca.workshop.features.home.presentation.components.SocialSection
 import edu.ucundinamarca.workshop.shared.presentation.components.WorkshopAppBar
 import edu.ucundinamarca.workshop.features.home.presentation.viewmodel.HomeViewModel
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.AutoAwesome
 
 @Composable
 fun HomeScreen(
@@ -31,6 +33,7 @@ fun HomeScreen(
     onNavigateToSchedule: () -> Unit,
     onNavigateToAbout: () -> Unit,
     onNavigateToWebView: (String) -> Unit,
+    onNavigateToAiChat: () -> Unit,
     viewModel: HomeViewModel = hiltViewModel()
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
@@ -51,6 +54,18 @@ fun HomeScreen(
     Scaffold(
         topBar = { WorkshopAppBar() },
         containerColor = MaterialTheme.colorScheme.background,
+        floatingActionButton = {
+            FloatingActionButton(
+                onClick = onNavigateToAiChat,
+                containerColor = MaterialTheme.colorScheme.primary,
+                contentColor = MaterialTheme.colorScheme.onPrimary
+            ) {
+                Icon(
+                    imageVector = Icons.Filled.AutoAwesome,
+                    contentDescription = "AI Chat"
+                )
+            }
+        }
     ) { paddingValues ->
         
         when {

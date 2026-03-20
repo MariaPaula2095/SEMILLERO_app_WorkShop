@@ -50,6 +50,7 @@ class AttendanceViewModel @Inject constructor(
             val newAnswers = state.answers.toMutableMap().apply { put(questionId, answer) }
             val newErrors = state.errors.toMutableMap().apply { remove(questionId) }
             
+            // If the question is not "Otro", clear the related "other" field
             if (!questionId.endsWith("_other") && answer != "Otro") {
                 newAnswers.remove("${questionId}_other")
                 newErrors.remove("${questionId}_other")
@@ -72,11 +73,11 @@ class AttendanceViewModel @Inject constructor(
         form.questions.forEach { question ->
             val answer = currentState.answers[question.id] ?: ""
             
-            // Required Check
+            // 1. Required Check
             if (question.isRequired && answer.isBlank()) {
                 errors[question.id] = "Este campo es obligatorio"
             } 
-            // Custom Validation Rules
+            // 2. Custom Validation Rules
             else if (answer.isNotBlank()) {
                 question.validation?.let { rule ->
                     if (rule.minLength != null && answer.length < rule.minLength) {
@@ -89,7 +90,7 @@ class AttendanceViewModel @Inject constructor(
                 }
             }
             
-            // Validation for "Otro" option
+            // 3. Validation for "Otro" option
             if (answer == "Otro") {
                 val otherAnswer = currentState.answers["${question.id}_other"]
                 if (otherAnswer.isNullOrBlank()) {
@@ -107,7 +108,7 @@ class AttendanceViewModel @Inject constructor(
         viewModelScope.launch {
             _uiState.update { it.copy(isSubmitting = true) }
             
-            // Data Normalization & "Otro" Merging
+            // 1. Data Normalization & "Otro" Merging
             val finalAnswers = mutableMapOf<String, String>()
             currentState.answers.forEach { (key, value) ->
                 // Skip "_other" keys as they will be handled by their parent fields
@@ -119,10 +120,10 @@ class AttendanceViewModel @Inject constructor(
                     value
                 }
                 
-                // Normalization Strategy
+                // 2. Normalization Strategy (Legacy alignment)
                 val normalizedValue = when (key) {
                     "institution", "academic_program" -> mergedValue.trim().uppercase()
-                    else -> mergedValue.trim()
+                    else -> mergedValue.trim() // Survey answers & personal data keep original casing
                 }
                 
                 finalAnswers[key] = normalizedValue
