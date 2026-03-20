@@ -1,0 +1,15 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Reglas para la colección Home
+    match /home/{document=**} {
+      allow read: if true; // En producción, podrías restringir esto más si fuera necesario
+      allow write: if false; // Solo se permite escritura desde el Firebase Console o Admin SDK
+    }
+    
+    // Regla por defecto: denegar todo lo demás
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

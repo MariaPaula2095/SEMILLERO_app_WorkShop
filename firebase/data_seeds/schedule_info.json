@@ -1,0 +1,41 @@
+[
+  {
+    "id": "1",
+    "startTime": "08:00 AM",
+    "endTime": "09:00 AM",
+    "title": "Registro y Bienvenida",
+    "description": "Apertura oficial del Workshop de Ingeniería 2026.",
+    "speaker": "Comité Organizador",
+    "location": "Auditorio Principal",
+    "type": "General",
+    "iconUrl": "https://img.icons8.com/ios-filled/50/004D29/entry-sign.png",
+    "registrationUrl": "",
+    "category": "CONFERENCES"
+  },
+  {
+    "id": "2",
+    "startTime": "09:00 AM",
+    "endTime": "11:00 AM",
+    "title": "Conferencia: IA en la Industria 5.0",
+    "description": "Impacto de la inteligencia artificial generativa en los procesos industriales modernos.",
+    "speaker": "Dra. Elena Rodríguez",
+    "location": "Auditorio Principal",
+    "type": "Conferencia",
+    "iconUrl": "https://img.icons8.com/ios-filled/50/004D29/artificial-intelligence.png",
+    "registrationUrl": "",
+    "category": "CONFERENCES"
+  },
+  {
+    "id": "3",
+    "startTime": "11:00 AM",
+    "endTime": "01:00 PM",
+    "title": "Taller: Kotlin Multiplatform",
+    "description": "Desarrollo de aplicaciones multiplataforma con una sola base de código.",
+    "speaker": "Ing. Carlos Mendoza",
+    "location": "Laboratorio de Software",
+    "type": "Taller",
+    "iconUrl": "https://img.icons8.com/ios-filled/50/004D29/kotlin.png",
+    "registrationUrl": "https://forms.gle/test",
+    "category": "WORKSHOPS"
+  }
+]

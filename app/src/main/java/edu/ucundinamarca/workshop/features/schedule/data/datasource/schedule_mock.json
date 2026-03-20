@@ -1,0 +1,53 @@
+[
+  {
+    "id": "conf1",
+    "startTime": "08:00 AM",
+    "endTime": "09:00 AM",
+    "title": "Apertura y Bienvenida",
+    "description": "Inicio oficial del Workshop 2026.",
+    "speaker": "Decano de Ingeniería",
+    "location": "Auditorio Principal",
+    "type": "Conferencia",
+    "iconUrl": "https://cdn-icons-png.flaticon.com/512/2921/2921222.png",
+    "category": "CONFERENCES"
+  },
+  {
+    "id": "taller1",
+    "startTime": "10:00 AM",
+    "endTime": "12:00 PM",
+    "title": "Taller de Jetpack Compose",
+    "description": "Aprendiendo las bases de UI declarativa.",
+    "speaker": "Ing. Daniel",
+    "location": "Laboratorio 302",
+    "type": "Taller",
+    "iconUrl": "https://cdn-icons-png.flaticon.com/512/1088/1088537.png",
+    "registrationUrl": "https://workshop.udec.edu/register/taller1",
+    "category": "WORKSHOPS"
+  },
+  {
+    "id": "virtual1",
+    "startTime": "02:00 PM",
+    "endTime": "04:00 PM",
+    "title": "Clean Architecture en Android",
+    "description": "Sesión virtual sobre mejores prácticas.",
+    "speaker": "Google Developer Expert",
+    "location": "Google Meet",
+    "type": "Taller Virtual",
+    "iconUrl": "https://cdn-icons-png.flaticon.com/512/3820/3820168.png",
+    "registrationUrl": "https://meet.google.com/abc-defg-hij",
+    "category": "VIRTUAL_WORKSHOPS"
+  },
+  {
+    "id": "mara1",
+    "startTime": "04:00 PM",
+    "endTime": "08:00 PM",
+    "title": "Maratón de Programación",
+    "description": "Retos de lógica y algoritmos.",
+    "speaker": "Comité de Maratón",
+    "location": "Bloque A",
+    "type": "Maratón",
+    "iconUrl": "https://cdn-icons-png.flaticon.com/512/2922/2922579.png",
+    "registrationUrl": "https://maraton.udec.edu",
+    "category": "MARATHON"
+  }
+]

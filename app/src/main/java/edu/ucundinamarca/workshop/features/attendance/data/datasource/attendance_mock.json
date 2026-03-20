@@ -1,0 +1,149 @@
+{
+  "id": "attendance_workshop_2026",
+  "title": "Registro de Asistencia - Workshop 2026",
+  "description": "Por favor, completa los siguientes datos para registrar tu asistencia y participar en nuestra encuesta sobre IA y Seguridad.",
+  "questions": [
+    {
+      "id": "institution",
+      "label": "Institución",
+      "type": "DROPDOWN",
+      "isRequired": true,
+      "options": [
+        "Universidad de Cundinamarca",
+        "Universidad Nacional",
+        "Universidad de los Andes",
+        "Universidad de la Sabana",
+        "Universidad Militar Nueva Granada",
+        "Uniminuto",
+        "SENA",
+        "Otro"
+      ],
+      "placeholder": "Selecciona tu institución"
+    },
+    {
+      "id": "academic_program",
+      "label": "Programa Académico",
+      "type": "DROPDOWN",
+      "isRequired": true,
+      "options": [
+        "Ingeniería de Sistemas y Computación",
+        "Ingeniería Electrónica",
+        "Ingeniería Industrial",
+        "Ingeniería Civil",
+        "Administración de Empresas",
+        "Contaduría Pública",
+        "Otro"
+      ],
+      "placeholder": "Selecciona tu programa"
+    },
+    {
+      "id": "full_name",
+      "label": "Nombre Completo",
+      "type": "TEXT",
+      "isRequired": true,
+      "placeholder": "Ej. Juan Pérez",
+      "validation": {
+        "minLength": 3,
+        "errorMessage": "El nombre debe tener al menos 3 caracteres"
+      }
+    },
+    {
+      "id": "document_number",
+      "label": "Número de Documento",
+      "type": "NUMBER",
+      "isRequired": true,
+      "placeholder": "Mínimo 6 dígitos",
+      "validation": {
+        "minLength": 6,
+        "regex": "^[0-9]*$",
+        "errorMessage": "El documento debe tener al menos 6 dígitos y solo números"
+      }
+    },
+    {
+      "id": "email",
+      "label": "Correo Electrónico",
+      "type": "EMAIL",
+      "isRequired": true,
+      "placeholder": "usuario@ejemplo.com",
+      "validation": {
+        "regex": "^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
+        "errorMessage": "Correo electrónico no válido"
+      }
+    },
+    {
+      "id": "security_concern_ia",
+      "label": "¿Qué tan preocupado/a estás por la seguridad de tus datos personales en IA?",
+      "type": "RADIO_GROUP",
+      "isRequired": true,
+      "options": [
+        "Muy preocupado/a",
+        "Algo preocupado/a",
+        "Poco preocupado/a",
+        "Nada preocupado/a"
+      ]
+    },
+    {
+      "id": "trust_ia_companies",
+      "label": "¿Confías en que las empresas que desarrollan IA protejan adecuadamente tu información personal?",
+      "type": "RADIO_GROUP",
+      "isRequired": true,
+      "options": [
+        "Sí, completamente",
+        "Sí, en su mayoría",
+        "No estoy seguro/a",
+        "No, en su mayoría",
+        "No, en absoluto"
+      ]
+    },
+    {
+      "id": "security_measures_importance",
+      "label": "¿Qué medidas de seguridad crees que son más importantes para proteger los datos en sistemas de IA?",
+      "type": "RADIO_GROUP",
+      "isRequired": true,
+      "options": [
+        "Encriptación de datos",
+        "Autenticación multifactor",
+        "Auditorías de seguridad regulares",
+        "Políticas de privacidad claras",
+        "Desconozco este tema"
+      ]
+    },
+    {
+      "id": "online_services_safety",
+      "label": "¿Qué tan seguro/a te sientes utilizando servicios en línea que emplean IA?",
+      "type": "RADIO_GROUP",
+      "isRequired": true,
+      "options": [
+        "Muy seguro/a",
+        "Algo seguro/a",
+        "Poco seguro/a",
+        "Nada seguro/a"
+      ]
+    },
+    {
+      "id": "ia_improves_security",
+      "label": "¿Crees que la IA puede ayudar a mejorar la seguridad informática?",
+      "type": "RADIO_GROUP",
+      "isRequired": true,
+      "options": [
+        "Sí, significativamente",
+        "Sí, en cierta medida",
+        "No estoy seguro/a",
+        "No, en su mayoría",
+        "No, en absoluto"
+      ]
+    },
+    {
+      "id": "security_education_importance",
+      "label": "¿Qué tan importante crees que es la educación sobre seguridad informática en el contexto de la IA para las futuras generaciones?",
+      "type": "RADIO_GROUP",
+      "isRequired": true,
+      "options": [
+        "Muy importante",
+        "Importante",
+        "Poco importante",
+        "Nada importante"
+      ]
+    }
+  ]
+}

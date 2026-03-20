@@ -1,0 +1,49 @@
+{
+  "developmentTeam": {
+    "title": "Equipo de Desarrollo",
+    "iconName": "Groups",
+    "items": [
+      {
+        "title": "Desarrolladores:",
+        "content": ["Brayan Andres Forigua Forero", "Daniel Alejandro Valencia Perico"],
+        "iconName": "Code"
+      },
+      {
+        "title": "Director:",
+        "content": ["William Alexandrer Matallana Porras"],
+        "iconName": "School"
+      },
+      {
+        "title": "Director de Programa:",
+        "content": ["Eduard Neftali Gutierrez Rodriguez"],
+        "iconName": "Person"
+      }
+    ]
+  },
+  "academicInfo": {
+    "title": "Información Académica",
+    "iconName": "Info",
+    "items": [
+      {
+        "title": "Facultad",
+        "content": ["Facultad de Ingeniería"],
+        "iconName": "Engineering"
+      },
+      {
+        "title": "Semestre",
+        "content": ["Noveno Semestre"],
+        "iconName": "CalendarMonth"
+      },
+      {
+        "title": "Materia",
+        "content": ["Línea De profundización 3"],
+        "iconName": "Book"
+      },
+      {
+        "title": "Decano",
+        "content": ["Javier Hernando Gracia Gil"],
+        "iconName": "AccountBalance"
+      }
+    ]
+  }
+}
