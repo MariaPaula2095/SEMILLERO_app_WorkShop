@@ -1,4 +1,4 @@
-# Workshop Ucundinamarca
+# Workshop UCundinamarca - Android
 
 ![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
 ![Kotlin](https://img.shields.io/badge/Kotlin-0095D5?style=for-the-badge&logo=kotlin&logoColor=white)
@@ -50,6 +50,9 @@ Este proyecto requiere una API Key de Gemini. Debes agregarla en tu archivo `loc
 ```properties
 GEMINI_API_KEY=tu_api_key_aqui
 ```
+
+> [!IMPORTANT]
+> Nunca el archivo `local.properties` al control de versiones para mantener la llave segura.
 
 ### 4. Firebase
 Asegúrate de tener el archivo `google-services.json` correspondiente en el directorio `app/`.
