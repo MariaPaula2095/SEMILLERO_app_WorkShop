@@ -8,6 +8,7 @@ import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow
 import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.CancellationException
 import javax.inject.Inject
 
 class HomeRepositoryImpl @Inject constructor(
@@ -16,12 +17,14 @@ class HomeRepositoryImpl @Inject constructor(
 
     override fun getHomeInfo(): Flow<Result<HomeInfo>> = flow {
         // --- MOCK DATA  ---
-        try {
+        val result = try {
             val mockDataSource = edu.ucundinamarca.workshop.features.home.data.datasource.HomeMockDataSource()
-            emit(Result.success(mockDataSource.getMockData()))
+            Result.success(mockDataSource.getMockData())
         } catch (e: Exception) {
-            emit(Result.failure(e))
+            if (e is CancellationException) throw e
+            Result.failure(e)
         }
+        emit(result)
 
         /* --- FIREBASE FIRESTORE ---
         callbackFlow {

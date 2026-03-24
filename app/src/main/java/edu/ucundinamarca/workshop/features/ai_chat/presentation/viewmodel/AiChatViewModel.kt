@@ -9,6 +9,7 @@ import edu.ucundinamarca.workshop.features.ai_chat.domain.repository.AppContextP
 import edu.ucundinamarca.workshop.features.ai_chat.domain.repository.ChatRepository
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.CancellationException
 import javax.inject.Inject
 
 data class AiChatState(
@@ -85,6 +86,7 @@ class AiChatViewModel @Inject constructor(
                     chatRepo.saveMessage(chatId, assistantMessage)
                 }
             } catch (e: Exception) {
+                if (e is CancellationException) throw e
                 _state.update { it.copy(error = "Error: ${e.message}") }
             } finally {
                 _state.update { it.copy(isLoading = false) }

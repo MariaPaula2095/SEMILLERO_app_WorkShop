@@ -9,6 +9,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.tasks.await
+import kotlinx.coroutines.CancellationException
 import javax.inject.Inject
 
 class AttendanceRepositoryImpl @Inject constructor(
@@ -17,12 +18,14 @@ class AttendanceRepositoryImpl @Inject constructor(
 
     override fun getAttendanceForm(): Flow<Result<AttendanceForm>> = flow {
         // --- MOCK DATA ---
-        try {
+        val result = try {
             val mockDataSource = AttendanceMockDataSource()
-            emit(Result.success(mockDataSource.getMockData()))
+            Result.success(mockDataSource.getMockData())
         } catch (e: Exception) {
-            emit(Result.failure(e))
+            if (e is CancellationException) throw e
+            Result.failure(e)
         }
+        emit(result)
 
         /* --- FIREBASE FIRESTORE ---
         callbackFlow {

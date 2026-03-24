@@ -11,6 +11,7 @@ import edu.ucundinamarca.workshop.features.about.domain.repository.IAboutReposit
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.tasks.await
+import kotlinx.coroutines.CancellationException
 import javax.inject.Inject
 
 /**
@@ -26,17 +27,19 @@ class AboutRepositoryImpl @Inject constructor(
 
     override fun getAboutInfo(): Flow<Result<AboutInfo>> = flow {
         // --- MOCK DATA ---
-        try {
+        val result = try {
             val mockDataSource = AboutMockDataSource()
             val versionName = getAppVersionName()
             
             val aboutInfo = mockDataSource.getMockData().copy(
                 appVersion = versionName
             )
-            emit(Result.success(aboutInfo))
+            Result.success(aboutInfo)
         } catch (e: Exception) {
-            emit(Result.failure(e))
+            if (e is CancellationException) throw e
+            Result.failure(e)
         }
+        emit(result)
 
         /* --- FIREBASE FIRESTORE ---
         callbackFlow {

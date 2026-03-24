@@ -20,8 +20,9 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         
-        // Cargar API Key desde local.properties o variables de entorno
+        // Cargar desde local.properties o variables de entorno
         buildConfigField("String", "GEMINI_API_KEY", "\"${project.findProperty("GEMINI_API_KEY") ?: "REPLACE_ME"}\"")
+        buildConfigField("String", "GEMINI_MODEL_NAME", "\"${project.findProperty("GEMINI_MODEL_NAME") ?: "gemini-1.5-flash"}\"")
     }
 
     buildTypes {

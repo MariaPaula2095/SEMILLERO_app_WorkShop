@@ -2,7 +2,9 @@ package edu.ucundinamarca.workshop.features.ai_chat.di
 
 import android.content.Context
 import androidx.room.*
+import android.util.Log
 import com.google.ai.client.generativeai.GenerativeModel
+import edu.ucundinamarca.workshop.BuildConfig
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -44,9 +46,18 @@ object AiChatModule {
     @Provides
     @Singleton
     fun provideGenerativeModel(): GenerativeModel {
+        val modelName = BuildConfig.GEMINI_MODEL_NAME
+        val apiKey = BuildConfig.GEMINI_API_KEY
+
+        if (BuildConfig.DEBUG) {
+            val keyPresent = apiKey.isNotBlank()
+            val maskedKey = if (keyPresent) "***${apiKey.takeLast(4)}" else "(none)"
+            Log.d("AiChatModule", "Creating GenerativeModel model=$modelName apiKeyPresent=$keyPresent apiKeyMasked=$maskedKey")
+        }
+
         return GenerativeModel(
-            modelName = "gemini-1.5-flash", 
-            apiKey = edu.ucundinamarca.workshop.BuildConfig.GEMINI_API_KEY
+            modelName = modelName,
+            apiKey = apiKey
         )
     }
 

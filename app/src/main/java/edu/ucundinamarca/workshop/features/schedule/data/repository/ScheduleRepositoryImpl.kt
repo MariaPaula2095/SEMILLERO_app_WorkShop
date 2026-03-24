@@ -9,6 +9,7 @@ import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow
 import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.CancellationException
 import javax.inject.Inject
 class ScheduleRepositoryImpl @Inject constructor(
     private val firestore: FirebaseFirestore
@@ -16,12 +17,14 @@ class ScheduleRepositoryImpl @Inject constructor(
 
     override fun getSchedule(): Flow<Result<List<ScheduleItem>>> = flow {
         // --- MOCK DATA ---
-        try {
+        val result = try {
             val mockDataSource = ScheduleMockDataSource()
-            emit(Result.success(mockDataSource.getMockData()))
+            Result.success(mockDataSource.getMockData())
         } catch (e: Exception) {
-            emit(Result.failure(e))
+            if (e is CancellationException) throw e
+            Result.failure(e)
         }
+        emit(result)
 
         /* --- FIREBASE FIRESTORE ---
         callbackFlow {
