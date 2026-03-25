@@ -18,6 +18,7 @@ import edu.ucundinamarca.workshop.features.ai_chat.data.repository.AppContextPro
 import edu.ucundinamarca.workshop.features.ai_chat.domain.repository.AppContextProvider
 import edu.ucundinamarca.workshop.features.schedule.domain.repository.IScheduleRepository
 import edu.ucundinamarca.workshop.features.attendance.domain.repository.IAttendanceRepository
+import edu.ucundinamarca.workshop.features.about.domain.repository.IAboutRepository
 import edu.ucundinamarca.workshop.features.ai_chat.domain.repository.AiProvider
 import edu.ucundinamarca.workshop.features.ai_chat.domain.repository.ChatRepository
 import javax.inject.Singleton
@@ -56,8 +57,8 @@ object AiChatModule {
         }
 
         return GenerativeModel(
-            modelName = modelName,
-            apiKey = apiKey
+            modelName = BuildConfig.GEMINI_MODEL_NAME, 
+            apiKey = BuildConfig.GEMINI_API_KEY
         )
     }
 
@@ -71,8 +72,9 @@ object AiChatModule {
     @Singleton
     fun provideAppContextProvider(
         scheduleRepo: IScheduleRepository,
-        attendanceRepo: IAttendanceRepository
+        attendanceRepo: IAttendanceRepository,
+        aboutRepo: IAboutRepository
     ): AppContextProvider {
-        return AppContextProviderImpl(scheduleRepo, attendanceRepo)
+        return AppContextProviderImpl(scheduleRepo, attendanceRepo, aboutRepo)
     }
 }

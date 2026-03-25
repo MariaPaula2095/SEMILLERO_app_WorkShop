@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
@@ -20,9 +22,18 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         
-        // Cargar desde local.properties o variables de entorno
-        buildConfigField("String", "GEMINI_API_KEY", "\"${project.findProperty("GEMINI_API_KEY") ?: "REPLACE_ME"}\"")
-        buildConfigField("String", "GEMINI_MODEL_NAME", "\"${project.findProperty("GEMINI_MODEL_NAME") ?: "gemini-1.5-flash"}\"")
+        // Cargar desde local.properties
+        val localProperties = Properties()
+        val localPropertiesFile = rootProject.projectDir.resolve("local.properties")
+        if (localPropertiesFile.exists()) {
+            localProperties.load(localPropertiesFile.inputStream())
+        }
+
+        val apiKey = localProperties.getProperty("GEMINI_API_KEY") ?: "REPLACE_ME"
+        val modelName = localProperties.getProperty("GEMINI_MODEL_NAME") ?: "gemini-2.5-flash"
+
+        buildConfigField("String", "GEMINI_API_KEY", "\"$apiKey\"")
+        buildConfigField("String", "GEMINI_MODEL_NAME", "\"$modelName\"")
     }
 
     buildTypes {
