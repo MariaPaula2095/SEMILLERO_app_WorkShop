@@ -10,12 +10,6 @@
       "isRequired": true,
       "options": [
         "Universidad de Cundinamarca",
-        "Universidad Nacional",
-        "Universidad de los Andes",
-        "Universidad de la Sabana",
-        "Universidad Militar Nueva Granada",
-        "Uniminuto",
-        "SENA",
         "Otro"
       ],
       "placeholder": "Selecciona tu institución"
@@ -26,12 +20,16 @@
       "type": "DROPDOWN",
       "isRequired": true,
       "options": [
-        "Ingeniería de Sistemas y Computación",
+        "Ingeniería Industrial Chía",
+        "Ingeniería Industrial Soacha",
+        "Ingeniería de Sistemas y Computación Chía",
+        "Ingeniería de Sistemas y Computación Ubaté",
+        "Ingeniería de Sistemas y Computación Fusa",
+        "Ingeniería de Sistemas y Computación Faca",
+        "Ingeniería Mecatrónica",
         "Ingeniería Electrónica",
-        "Ingeniería Industrial",
-        "Ingeniería Civil",
-        "Administración de Empresas",
-        "Contaduría Pública",
+        "Ingeniería de Software Soacha",
+        "Ingeniería de Software Girardot",
         "Otro"
       ],
       "placeholder": "Selecciona tu programa"
