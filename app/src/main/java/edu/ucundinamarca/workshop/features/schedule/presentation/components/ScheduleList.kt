@@ -1,5 +1,9 @@
 package edu.ucundinamarca.workshop.features.schedule.presentation.components
 
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.slideInVertically
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -8,6 +12,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import edu.ucundinamarca.workshop.features.about.presentation.components.Footer
 import edu.ucundinamarca.workshop.features.schedule.domain.model.ScheduleItem
 
 @Composable
@@ -23,27 +28,49 @@ fun ScheduleList(
         contentPadding = PaddingValues(bottom = 32.dp)
     ) {
         itemsIndexed(items) { index, item ->
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(horizontal = 16.dp)
+            AnimatedVisibility(
+                visible = true,
+                enter = slideInVertically(
+                    initialOffsetY = { it / 2 },
+                    animationSpec = tween(
+                        durationMillis = 500,
+                        delayMillis = index * 80
+                    )
+                ) + fadeIn(
+                    animationSpec = tween(
+                        durationMillis = 500,
+                        delayMillis = index * 80
+                    )
+                )
             ) {
-                // Linea de tiempo (Solo si no es el último)
-                if (index < items.lastIndex) {
-                    Box(
-                        modifier = Modifier
-                            .width(2.dp)
-                            .height(200.dp)
-                            .offset(x = 21.dp, y = 44.dp)
-                            .background(MaterialTheme.colorScheme.primary.copy(alpha = 0.3f))
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 16.dp)
+                ) {
+                    if (index < items.lastIndex) {
+                        Box(
+                            modifier = Modifier
+                                .width(2.dp)
+                                .height(200.dp)
+                                .offset(x = 21.dp, y = 44.dp)
+                                .background(
+                                    MaterialTheme.colorScheme.primary.copy(alpha = 0.3f)
+                                )
+                        )
+                    }
+
+                    ScheduleItemCard(
+                        item = item,
+                        onRegisterClick = onItemClick
                     )
                 }
-
-                ScheduleItemCard(
-                    item = item,
-                    onRegisterClick = onItemClick
-                )
             }
+        }
+
+        item {
+            Spacer(modifier = Modifier.height(32.dp))
+            Footer()
         }
     }
 }

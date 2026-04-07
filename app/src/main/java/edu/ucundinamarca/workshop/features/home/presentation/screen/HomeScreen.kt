@@ -26,7 +26,7 @@ import edu.ucundinamarca.workshop.shared.presentation.components.WorkshopAppBar
 import edu.ucundinamarca.workshop.features.home.presentation.viewmodel.HomeViewModel
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AutoAwesome
-
+import edu.ucundinamarca.workshop.features.about.presentation.components.Footer
 @Composable
 fun HomeScreen(
     onNavigateToForm: () -> Unit,
@@ -111,6 +111,9 @@ fun HomeScreen(
                             .navigationBarsPadding()
                             .height(spacing.extraSmall)
                     )
+
+                    Footer()
+
                 }
             }
         }

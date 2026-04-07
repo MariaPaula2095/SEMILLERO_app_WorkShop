@@ -17,7 +17,10 @@ import edu.ucundinamarca.workshop.features.schedule.presentation.components.Cate
 import edu.ucundinamarca.workshop.features.schedule.presentation.components.ScheduleList
 import edu.ucundinamarca.workshop.features.schedule.presentation.viewmodel.ScheduleViewModel
 import edu.ucundinamarca.workshop.shared.presentation.components.WorkshopAppBar
-
+import androidx.compose.animation.*
+import androidx.compose.animation.core.tween
+import androidx.compose.runtime.key
+import edu.ucundinamarca.workshop.features.about.presentation.components.Footer
 @Composable
 fun ScheduleScreen(
     onNavigateBack: () -> Unit,
@@ -139,10 +142,31 @@ fun ScheduleScreen(
                         }
                     }
                     else -> {
-                        ScheduleList(
-                            items = uiState.filteredItems,
-                            onItemClick = onNavigateToWebView
-                        )
+                        AnimatedContent(
+                            targetState = uiState.selectedCategory,
+                            transitionSpec = {
+                                (
+                                        slideInHorizontally(
+                                            initialOffsetX = { fullWidth -> fullWidth },
+                                            animationSpec = tween(400)
+                                        ) + fadeIn(animationSpec = tween(400))
+                                        ).togetherWith(
+                                        slideOutHorizontally(
+                                            targetOffsetX = { fullWidth -> -fullWidth },
+                                            animationSpec = tween(400)
+                                        ) + fadeOut(animationSpec = tween(400))
+                                    )
+                            },
+                            label = "CategoryAnimation"
+                        ) { targetCategory ->
+                            key(targetCategory) {
+                                ScheduleList(
+                                    items = uiState.filteredItems,
+                                    onItemClick = onNavigateToWebView
+                                )
+                            }
+                        }
+
                     }
                 }
             }
