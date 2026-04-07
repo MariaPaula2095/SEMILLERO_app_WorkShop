@@ -24,19 +24,7 @@
     "registrationUrl": "https://workshop.udec.edu/register/taller1",
     "category": "WORKSHOPS"
   },
-  {
-    "id": "virtual1",
-    "startTime": "02:00 PM",
-    "endTime": "04:00 PM",
-    "title": "Clean Architecture en Android",
-    "description": "Sesión virtual sobre mejores prácticas.",
-    "speaker": "Google Developer Expert",
-    "location": "Google Meet",
-    "type": "Taller Virtual",
-    "iconUrl": "https://cdn-icons-png.flaticon.com/512/3820/3820168.png",
-    "registrationUrl": "https://meet.google.com/abc-defg-hij",
-    "category": "VIRTUAL_WORKSHOPS"
-  },
+
   {
     "id": "mara1",
     "startTime": "04:00 PM",

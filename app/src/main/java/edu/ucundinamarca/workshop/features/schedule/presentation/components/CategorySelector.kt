@@ -24,7 +24,8 @@ fun CategorySelector(
     val categories = listOf(
         ScheduleCategory.CONFERENCES to "Conferencias",
         ScheduleCategory.WORKSHOPS to "Talleres",
-        ScheduleCategory.VIRTUAL_WORKSHOPS to "Virtuales",
+        // CATEGORIA COMENTADA POR DESUSO
+        //ScheduleCategory.VIRTUAL_WORKSHOPS to "Virtuales",
         ScheduleCategory.MARATHON to "Maratón"
     )
 
@@ -88,7 +89,8 @@ private fun getIconForCategory(category: ScheduleCategory): ImageVector {
     return when (category) {
         ScheduleCategory.CONFERENCES -> Icons.Default.Groups
         ScheduleCategory.WORKSHOPS -> Icons.Default.Terminal
-        ScheduleCategory.VIRTUAL_WORKSHOPS -> Icons.Default.Laptop
+        // CATEGORIA COMENTADA POR DESUSO
+        //ScheduleCategory.VIRTUAL_WORKSHOPS -> Icons.Default.Laptop
         ScheduleCategory.MARATHON -> Icons.Default.Code
     }
 }
