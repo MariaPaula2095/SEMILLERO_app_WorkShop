@@ -13,6 +13,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
 import edu.ucundinamarca.workshop.core.ui.theme.WorkshopTheme
+import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.unit.sp
 
 @Composable
 fun HeroHeader(
@@ -54,25 +56,32 @@ fun HeroHeader(
                     Surface(
                         color = MaterialTheme.colorScheme.primary.copy(alpha = 0.05f),
                         shape = RoundedCornerShape(20.dp),
-                        modifier = Modifier.padding(bottom = spacing.medium)
+                        modifier = Modifier
+                            .padding(bottom = spacing.medium)
+                            .fillMaxWidth()
+                            .weight(0.6f)
                     ) {
                         AsyncImage(
                             model = logoUrl,
                             contentDescription = "Event Logo",
-                            modifier = Modifier
-                                .height(110.dp)
-                                .padding(spacing.small),
-                            contentScale = ContentScale.Fit
+                            contentScale = ContentScale.Fit,
+                            modifier = Modifier.fillMaxSize()
                         )
                     }
-                    
+
                     Text(
                         text = title,
                         style = MaterialTheme.typography.headlineLarge.copy(
                             fontWeight = FontWeight.ExtraBold,
                             textAlign = TextAlign.Center
                         ),
-                        color = MaterialTheme.colorScheme.primary
+                        color = MaterialTheme.colorScheme.primary,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .weight(0.4f),
+                        maxLines = 3,
+                        overflow = TextOverflow.Ellipsis,
+                        fontSize = 20.sp
                     )
                 }
             }
