@@ -5,12 +5,12 @@
     "items": [
       {
         "title": "Desarrolladores:",
-        "content": ["Brayan Andres Forigua Forero", "Daniel Alejandro Valencia Perico"],
+        "content": ["Semillero UPS - UdeC Programing Seedbed","Brayan Andres Forigua Forero", "Daniel Alejandro Valencia Perico"],
         "iconName": "Code"
       },
       {
         "title": "Director:",
-        "content": ["William Alexandrer Matallana Porras"],
+        "content": ["William Alexander Matallana Porras"],
         "iconName": "School"
       },
       {
@@ -28,16 +28,6 @@
         "title": "Facultad",
         "content": ["Facultad de Ingeniería"],
         "iconName": "Engineering"
-      },
-      {
-        "title": "Semestre",
-        "content": ["Noveno Semestre"],
-        "iconName": "CalendarMonth"
-      },
-      {
-        "title": "Materia",
-        "content": ["Línea De profundización 3"],
-        "iconName": "Book"
       },
       {
         "title": "Decano",

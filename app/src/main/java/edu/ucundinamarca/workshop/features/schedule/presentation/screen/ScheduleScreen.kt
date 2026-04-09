@@ -30,8 +30,11 @@ fun ScheduleScreen(
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
 
     Scaffold(
-        topBar = { 
+        topBar = {
             WorkshopAppBar(onBackClick = onNavigateBack)
+        },
+        bottomBar = {
+            Footer()
         },
         containerColor = MaterialTheme.colorScheme.background
     ) { paddingValues ->
