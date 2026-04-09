@@ -127,6 +127,18 @@ fun AboutScreen(
                             }
                         }
 
+                        //Credits Section
+                        Column(modifier = Modifier.padding(horizontal = 16.dp)) {
+                            AboutSectionHeader(
+                                title = info.iconCredits.title,
+                                iconName = info.iconCredits.iconName
+                            )
+                            Spacer(modifier = Modifier.height(8.dp))
+                            info.iconCredits.items.forEach { item ->
+                                AboutInfoCard(item = item)
+                            }
+                        }
+
                         Spacer(modifier = Modifier.height(24.dp))
 
                         // Actions Section

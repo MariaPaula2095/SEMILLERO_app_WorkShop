@@ -35,5 +35,16 @@
         "iconName": "AccountBalance"
       }
     ]
+  },
+  "iconCredits": {
+    "title": "Iconos",
+    "iconName": "Palette",
+    "items": [
+      {
+        "title": "Créditos",
+        "content": ["Iconos Diseñados Por Flaticon (www.flaticon.com)"],
+        "iconName": "CopyRigh"
+      }
+    ]
   }
 }
