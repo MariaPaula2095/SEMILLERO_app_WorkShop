@@ -3,7 +3,8 @@ package edu.ucundinamarca.workshop.features.about.domain.model
 data class AboutInfo(
     val developmentTeam: Section,
     val academicInfo: Section,
-    val appVersion: String
+    val appVersion: String,
+    val iconCredits: Section
 )
 
 data class Section(

@@ -9,7 +9,8 @@ import kotlinx.serialization.Serializable
 @Serializable
 private data class AboutInfoMock(
     val developmentTeam: SectionMock,
-    val academicInfo: SectionMock
+    val academicInfo: SectionMock,
+    val iconCredits: SectionMock
 )
 
 @Serializable
@@ -37,6 +38,7 @@ class AboutMockDataSource {
         return AboutInfo(
             developmentTeam = mapSection(mock.developmentTeam),
             academicInfo = mapSection(mock.academicInfo),
+            iconCredits = mapSection(mock.iconCredits),
             appVersion = ""
         )
     }

@@ -59,6 +59,8 @@ fun getIconByName(name: String): ImageVector {
         "CalendarMonth" -> Icons.Default.CalendarMonth
         "Book" -> Icons.Default.Book
         "AccountBalance" -> Icons.Default.AccountBalance
+        "Palette" -> Icons.Default.Palette
+        "CopyRight" -> Icons.Default.Copyright
         else -> Icons.Default.Info
     }
 }
