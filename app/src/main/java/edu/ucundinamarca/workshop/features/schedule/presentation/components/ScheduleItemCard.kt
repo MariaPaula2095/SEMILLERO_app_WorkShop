@@ -94,8 +94,8 @@ fun ScheduleItemCard(
                     InfoTag(text = item.type)
                 }
 
-                if (item.registrationUrl.isNotEmpty() &&              // CATEGORIA COMENTADA POR DESUSO
-                    (item.category == ScheduleCategory.WORKSHOPS )) { //|| item.category == ScheduleCategory.VIRTUAL_WORKSHOPS
+                if (item.registrationUrl.isNotEmpty() &&                                                                // CATEGORIA COMENTADA POR DESUSO
+                    (item.category == ScheduleCategory.WORKSHOPS || item.category == ScheduleCategory.CONFERENCES)) { //|| item.category == ScheduleCategory.VIRTUAL_WORKSHOPS
                     Spacer(modifier = Modifier.height(16.dp))
                     Button(
                         onClick = { onRegisterClick(item.registrationUrl) },
