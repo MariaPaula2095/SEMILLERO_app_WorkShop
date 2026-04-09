@@ -12,7 +12,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import edu.ucundinamarca.workshop.features.about.presentation.components.Footer
 import edu.ucundinamarca.workshop.features.schedule.domain.model.ScheduleItem
 
 @Composable
@@ -68,9 +67,5 @@ fun ScheduleList(
             }
         }
 
-        item {
-            Spacer(modifier = Modifier.height(32.dp))
-            Footer()
-        }
     }
 }
