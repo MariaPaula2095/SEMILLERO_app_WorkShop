@@ -14,6 +14,7 @@ import edu.ucundinamarca.workshop.features.home.presentation.navigation.homeScre
 import edu.ucundinamarca.workshop.features.schedule.presentation.navigation.scheduleScreen
 import edu.ucundinamarca.workshop.shared.presentation.navigation.webViewScreen
 import edu.ucundinamarca.workshop.features.ai_chat.presentation.navigation.aiChatScreen
+import edu.ucundinamarca.workshop.features.evaluation.presentation.screen.EvaluacionWorkshopScreen
 
 @Composable
 fun AppNavigation(modifier: Modifier = Modifier) {

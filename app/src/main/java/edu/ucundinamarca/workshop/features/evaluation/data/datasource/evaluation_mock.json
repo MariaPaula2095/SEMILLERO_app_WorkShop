@@ -1,0 +1,39 @@
+{
+  "id": "main_evaluation_form",
+  "title": "Evaluación del Workshop",
+  "description": "Queremos conocer tu opinión sobre el evento. Por favor responde todas las preguntas.",
+  "questions": [
+    {
+      "id": "expectations_met",
+      "label": "¿El Workshop cumplió sus expectativas?",
+      "type": "RADIO_GROUP",
+      "isRequired": true,
+      "options": ["Sí", "No", "Parcialmente"]
+    },
+    {
+      "id": "would_recommend",
+      "label": "¿Recomendaría el workshop?",
+      "type": "RADIO_GROUP",
+      "isRequired": true,
+      "options": ["Sí", "No"]
+    },
+    {
+      "id": "comments",
+      "label": "¿Qué comentarios o sugerencias tiene?",
+      "type": "TEXT",
+      "isRequired": true,
+      "placeholder": "Escribe tus comentarios o sugerencias aquí",
+      "validation": {
+        "minLength": 3,
+        "errorMessage": "Por favor escribe un comentario válido"
+      }
+    },
+    {
+      "id": "event_rating",
+      "label": "Del 1 al 5, ¿con cuánto calificaría el evento?",
+      "type": "RADIO_GROUP",
+      "isRequired": true,
+      "options": ["1", "2", "3", "4", "5"]
+    }
+  ]
+}
