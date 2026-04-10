@@ -34,7 +34,9 @@ fun HomeScreen(
     onNavigateToAbout: () -> Unit,
     onNavigateToWebView: (String) -> Unit,
     onNavigateToAiChat: () -> Unit,
+    onNavigateToEvaluation: () -> Unit,
     viewModel: HomeViewModel = hiltViewModel()
+
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
     val spacing = WorkshopTheme.spacing
@@ -105,6 +107,18 @@ fun HomeScreen(
                         onScheduleClick = onNavigateToSchedule,
                         onAboutClick = onNavigateToAbout
                     )
+
+                    //se agregaa boton de formualrio de evaluacion workshop
+                    Spacer(modifier = Modifier.height(spacing.medium))
+
+                    Button(
+                        onClick = onNavigateToEvaluation,
+                        modifier = Modifier
+                            .fillMaxWidth() //ocupe todo el ancho
+                            .padding(horizontal = spacing.medium) //margen horizontal
+                    ) {
+                        Text("Evaluar workshop") //texto de boton
+                    }
 
                     Spacer(
                         modifier = Modifier
