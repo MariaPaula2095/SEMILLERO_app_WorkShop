@@ -25,10 +25,38 @@ fun EvaluacionWorkshopScreen(
     viewModel: EvaluationViewModel = hiltViewModel()
 ) {
     val uiState by viewModel.uiState.collectAsState()
+    val showSuccessDialog = uiState.isSuccess
 
+    /*
     if (uiState.isSuccess) {
         onNavigateBack()
     }
+     */
+
+    //Mostrar mensaje de confirmacion de envio
+    if (showSuccessDialog) {
+        AlertDialog(
+            onDismissRequest = { },
+            confirmButton = {
+                Button(
+                    onClick = {
+                        viewModel.resetState()
+                        onNavigateBack()
+                    }
+                ) {
+                    Text("Aceptar")
+                }
+            },
+            title = {
+                Text("¡Gracias por tus respuestas!")
+            },
+            text = {
+                Text("El formulario fue enviado correctamente.")
+            }
+        )
+    }
+
+
 
     Scaffold(
         topBar = {

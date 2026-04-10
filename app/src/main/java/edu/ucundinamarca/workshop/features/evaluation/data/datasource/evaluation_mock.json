@@ -31,9 +31,10 @@
     {
       "id": "event_rating",
       "label": "Del 1 al 5, ¿con cuánto calificaría el evento?",
+      "label": "Del 1 al 5, ¿con cuánto calificaría el evento?",
       "type": "RADIO_GROUP",
       "isRequired": true,
-      "options": ["1", "2", "3", "4", "5"]
+      "options": ["5", "4", "3", "2", "1"]
     }
   ]
 }
