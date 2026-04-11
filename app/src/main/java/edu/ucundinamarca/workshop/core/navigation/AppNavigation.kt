@@ -5,6 +5,7 @@ import androidx.compose.animation.core.tween
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import edu.ucundinamarca.workshop.features.about.presentation.navigation.aboutScreen
 import edu.ucundinamarca.workshop.features.about.presentation.navigation.privacyScreen
@@ -13,7 +14,11 @@ import edu.ucundinamarca.workshop.features.home.presentation.navigation.homeScre
 import edu.ucundinamarca.workshop.features.schedule.presentation.navigation.scheduleScreen
 import edu.ucundinamarca.workshop.shared.presentation.navigation.webViewScreen
 import edu.ucundinamarca.workshop.features.ai_chat.presentation.navigation.aiChatScreen
+
+import edu.ucundinamarca.workshop.features.evaluation.presentation.screen.EvaluacionWorkshopScreen
+
 import edu.ucundinamarca.workshop.features.welcome.presentation.navigation.welcomeScreen
+
 
 @Composable
 fun AppNavigation(modifier: Modifier = Modifier) {
@@ -73,6 +78,10 @@ fun AppNavigation(modifier: Modifier = Modifier) {
             },
             onNavigateToAiChat = {
                 navController.navigate(Route.AiChat)
+            },
+            // se agrega ruta de evaluacion
+            onNavigateToEvaluation = {
+                navController.navigate(Route.EvaluationWorkshop)
             }
         )
 
@@ -119,5 +128,14 @@ fun AppNavigation(modifier: Modifier = Modifier) {
                 navController.popBackStack()
             }
         )
+
+        composable<Route.EvaluationWorkshop> {
+            EvaluacionWorkshopScreen(
+                onNavigateBack = {
+                    navController.popBackStack()
+                }
+            )
+        }
+
     }
 }

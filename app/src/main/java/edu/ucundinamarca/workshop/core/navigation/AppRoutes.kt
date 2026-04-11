@@ -24,6 +24,9 @@ sealed interface Route {
 
     @Serializable
     data object AiChat : Route
+    //serializamos la ruta de la evaluacion
+    @Serializable
+    data object EvaluationWorkshop : Route
 
     /**
      * Ruta para visualizar contenido externo.

@@ -10,7 +10,8 @@ fun NavGraphBuilder.homeScreen(
     onNavigateToSchedule: () -> Unit,
     onNavigateToAbout: () -> Unit,
     onNavigateToWebView: (String) -> Unit,
-    onNavigateToAiChat: () -> Unit
+    onNavigateToAiChat: () -> Unit,
+    onNavigateToEvaluation: () -> Unit
 ) {
     composable<Route.Home> {
         HomeScreen(
@@ -18,7 +19,8 @@ fun NavGraphBuilder.homeScreen(
             onNavigateToSchedule = onNavigateToSchedule,
             onNavigateToAbout = onNavigateToAbout,
             onNavigateToWebView = onNavigateToWebView,
-            onNavigateToAiChat = onNavigateToAiChat
+            onNavigateToAiChat = onNavigateToAiChat,
+            onNavigateToEvaluation = onNavigateToEvaluation
         )
     }
 }
