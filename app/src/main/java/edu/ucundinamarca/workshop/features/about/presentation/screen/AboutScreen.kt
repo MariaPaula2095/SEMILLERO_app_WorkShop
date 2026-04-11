@@ -127,6 +127,7 @@ fun AboutScreen(
                             }
                         }
 
+                        Spacer(modifier = Modifier.height(24.dp))
                         //Credits Section
                         Column(modifier = Modifier.padding(horizontal = 16.dp)) {
                             AboutSectionHeader(
