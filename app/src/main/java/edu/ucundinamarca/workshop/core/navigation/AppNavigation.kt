@@ -13,6 +13,7 @@ import edu.ucundinamarca.workshop.features.home.presentation.navigation.homeScre
 import edu.ucundinamarca.workshop.features.schedule.presentation.navigation.scheduleScreen
 import edu.ucundinamarca.workshop.shared.presentation.navigation.webViewScreen
 import edu.ucundinamarca.workshop.features.ai_chat.presentation.navigation.aiChatScreen
+import edu.ucundinamarca.workshop.features.welcome.presentation.navigation.welcomeScreen
 
 @Composable
 fun AppNavigation(modifier: Modifier = Modifier) {
@@ -20,7 +21,7 @@ fun AppNavigation(modifier: Modifier = Modifier) {
 
     NavHost(
         navController = navController,
-        startDestination = Route.Home,
+        startDestination = Route.Welcome,
         modifier = modifier,
         enterTransition = {
             slideIntoContainer(
@@ -47,6 +48,16 @@ fun AppNavigation(modifier: Modifier = Modifier) {
             )
         }
     ) {
+        welcomeScreen(
+            onNavigateToHome = {
+                navController.navigate(Route.Home) {
+                    popUpTo(Route.Welcome) {
+                        inclusive = true
+                    }
+                }
+            }
+        )
+
         homeScreen(
             onNavigateToForm = {
                 navController.navigate(Route.Attendance)
