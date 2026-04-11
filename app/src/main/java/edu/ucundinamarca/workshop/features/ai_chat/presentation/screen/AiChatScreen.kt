@@ -6,10 +6,12 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.automirrored.filled.Send
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -21,7 +23,8 @@ import edu.ucundinamarca.workshop.features.ai_chat.presentation.viewmodel.AiChat
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AiChatScreen(
-    viewModel: AiChatViewModel = hiltViewModel()
+    viewModel: AiChatViewModel = hiltViewModel(),
+    onBackToMain: () -> Unit
 ) {
     val state by viewModel.state.collectAsState()
     var textInput by remember { mutableStateOf("") }
@@ -29,11 +32,16 @@ fun AiChatScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Asistente AI", fontWeight = FontWeight.Bold) },
-                colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = MaterialTheme.colorScheme.primaryContainer,
-                    titleContentColor = MaterialTheme.colorScheme.onPrimaryContainer
-                )
+                title = { Text("Asistente IA", fontWeight = FontWeight.Bold) },
+                navigationIcon = {
+                    IconButton(onClick = onBackToMain) {
+                        Icon(
+                            imageVector = Icons.AutoMirrored.Filled.ArrowBack,
+                            contentDescription = "volver",
+                            tint = Color.White
+                        )
+                    }
+                },
             )
         },
         contentWindowInsets = WindowInsets.statusBars

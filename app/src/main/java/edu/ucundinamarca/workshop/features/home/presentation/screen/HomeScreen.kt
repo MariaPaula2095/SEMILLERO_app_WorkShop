@@ -49,6 +49,16 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.res.painterResource
+
+import androidx.compose.animation.core.Animatable
+import androidx.compose.animation.core.EaseOutBounce
+import androidx.compose.animation.core.LinearOutSlowInEasing
+import androidx.compose.foundation.Image
+import androidx.compose.material3.FloatingActionButton
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.remember
+import kotlinx.coroutines.delay
 @Composable
 fun HomeScreen(
     onNavigateToForm: () -> Unit,
@@ -65,6 +75,7 @@ fun HomeScreen(
     val colorScheme = MaterialTheme.colorScheme
     val view = LocalView.current
     val context = view.context as Activity
+    val logoSize = 90.dp //icono IA chat
 
     //variables nuevas para el boton de evaluar
     val infiniteTransition = rememberInfiniteTransition(label = "evaluation_button_animation")
@@ -92,17 +103,54 @@ fun HomeScreen(
         topBar = { WorkshopAppBar() },
         containerColor = MaterialTheme.colorScheme.background,
         floatingActionButton = {
+            //Icono de Ia Chat con 3 saltos cada 2s
+            val offsetY = remember { Animatable(0f) }
+
+            LaunchedEffect(Unit) {
+                while (true) {
+                    // alturas de cada rebote
+                    val bounces = listOf(
+                        -30f,
+                        -40f,
+                        -60f
+                    )
+                    for (bounce in bounces) {
+                        offsetY.animateTo(
+                            targetValue = bounce,
+                            animationSpec = tween(
+                                durationMillis = 300,
+                                easing = LinearOutSlowInEasing
+                            )
+                        )
+
+                        offsetY.animateTo(
+                            targetValue = 0f,
+                            animationSpec = tween(
+                                durationMillis = 500,
+                                easing = EaseOutBounce
+                            )
+                        )
+                    }
+                    delay(2000)
+                }
+
+            }
             FloatingActionButton(
                 onClick = onNavigateToAiChat,
+                modifier = Modifier.offset(y = offsetY.value.dp),
                 containerColor = MaterialTheme.colorScheme.primary,
-                contentColor = MaterialTheme.colorScheme.onPrimary
-            ) {
-                Icon(
-                    imageVector = Icons.Filled.AutoAwesome,
-                    contentDescription = "AI Chat"
+                shape = CircleShape,
+
+                ) {
+                Image(
+                    painter = painterResource(id = R.drawable.ic_robot_ia_chat),
+                    contentDescription = "Logo",
+                    modifier = Modifier.size(logoSize)
                 )
             }
         }
+
+
     ) { paddingValues ->
 
         when {
