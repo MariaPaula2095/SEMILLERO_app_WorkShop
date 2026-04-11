@@ -4,6 +4,9 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 sealed interface Route {
+
+    @Serializable
+    data object Welcome : Route
     @Serializable
     data object Home : Route
 
@@ -31,5 +34,6 @@ sealed interface Route {
      */
     @Serializable
     data class WebView(val url: String) : Route
+
 
 }
