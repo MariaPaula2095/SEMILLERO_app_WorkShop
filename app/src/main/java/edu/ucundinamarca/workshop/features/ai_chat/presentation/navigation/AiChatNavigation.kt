@@ -10,6 +10,6 @@ fun NavGraphBuilder.aiChatScreen(
     onNavigateBack: () -> Unit
 ) {
     composable<Route.AiChat> {
-        AiChatScreen()
+        AiChatScreen(onBackToMain = onNavigateBack)
     }
 }
