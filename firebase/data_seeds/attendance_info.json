@@ -1,7 +1,7 @@
 {
   "id": "main_attendance_form",
   "title": "Registro de Asistencia - Workshop 2026",
-  "description": "Formulario oficial de registro y encuesta de percepción sobre IA.",
+  "description": "Por favor, completa los siguientes datos para registrar tu asistencia y participar en nuestra encuesta sobre IA y Seguridad.",
   "questions": [
     {
       "id": "institution",
@@ -10,12 +10,6 @@
       "isRequired": true,
       "options": [
         "Universidad de Cundinamarca",
-        "Universidad Nacional",
-        "Universidad de los Andes",
-        "Universidad de la Sabana",
-        "Universidad Militar Nueva Granada",
-        "Uniminuto",
-        "SENA",
         "Otro"
       ],
       "placeholder": "Selecciona tu institución"
@@ -26,12 +20,16 @@
       "type": "DROPDOWN",
       "isRequired": true,
       "options": [
-        "Ingeniería de Sistemas y Computación",
+        "Ingeniería Industrial Chía",
+        "Ingeniería Industrial Soacha",
+        "Ingeniería de Sistemas y Computación Chía",
+        "Ingeniería de Sistemas y Computación Ubaté",
+        "Ingeniería de Sistemas y Computación Fusa",
+        "Ingeniería de Sistemas y Computación Faca",
+        "Ingeniería Mecatrónica",
         "Ingeniería Electrónica",
-        "Ingeniería Industrial",
-        "Ingeniería Civil",
-        "Administración de Empresas",
-        "Contaduría Pública",
+        "Ingeniería de Software Soacha",
+        "Ingeniería de Software Girardot",
         "Otro"
       ],
       "placeholder": "Selecciona tu programa"
@@ -44,7 +42,7 @@
       "placeholder": "Ej. Juan Pérez",
       "validation": {
         "minLength": 3,
-        "errorMessage": "Nombre muy corto"
+        "errorMessage": "El nombre debe tener al menos 3 caracteres"
       }
     },
     {
@@ -52,11 +50,11 @@
       "label": "Número de Documento",
       "type": "NUMBER",
       "isRequired": true,
-      "placeholder": "C.C / T.I",
+      "placeholder": "Mínimo 6 dígitos",
       "validation": {
         "minLength": 6,
         "regex": "^[0-9]*$",
-        "errorMessage": "Documento inválido (mínimo 6 números)"
+        "errorMessage": "El documento debe tener al menos 6 dígitos y solo números"
       }
     },
     {
@@ -64,10 +62,10 @@
       "label": "Correo Electrónico",
       "type": "EMAIL",
       "isRequired": true,
-      "placeholder": "usuario@ucundinamarca.edu.co",
+      "placeholder": "usuario@ejemplo.com",
       "validation": {
         "regex": "^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
-        "errorMessage": "Correo no válido"
+        "errorMessage": "Correo electrónico no válido"
       }
     },
     {
