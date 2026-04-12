@@ -95,6 +95,7 @@ dependencies {
     // Coil 3
     implementation(libs.coil.compose)
     implementation(libs.coil.network.okhttp)
+    implementation("io.coil-kt:coil-compose:2.6.0") //para imagen robot IA chat
 
     // Gemini AI
     implementation(libs.google.ai.client)

@@ -58,6 +58,7 @@ import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
+import coil3.compose.rememberAsyncImagePainter
 import kotlinx.coroutines.delay
 @Composable
 fun HomeScreen(
@@ -76,6 +77,7 @@ fun HomeScreen(
     val view = LocalView.current
     val context = view.context as Activity
     val logoSize = 90.dp //icono IA chat
+    val logoURL = "https://drive.google.com/uc?export=download&id=1ta_LZLRpatap0KTaTsL_0OFB2PWkMnoc"
 
     //variables nuevas para el boton de evaluar
     val infiniteTransition = rememberInfiniteTransition(label = "evaluation_button_animation")
@@ -143,7 +145,7 @@ fun HomeScreen(
 
                 ) {
                 Image(
-                    painter = painterResource(id = R.drawable.ic_robot_ia_chat),
+                    painter = rememberAsyncImagePainter(logoURL),
                     contentDescription = "Logo",
                     modifier = Modifier.size(logoSize)
                 )
