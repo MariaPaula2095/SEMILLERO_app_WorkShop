@@ -7,7 +7,7 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 private data class HomeInfoMock(
-    val bannerUrl: String,
+    val bannerUrl: List<String>,
     val logoUrl: String,
     val eventTitle: String,
     val eventDate: String,

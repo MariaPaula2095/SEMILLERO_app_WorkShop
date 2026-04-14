@@ -59,6 +59,9 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 import coil3.compose.rememberAsyncImagePainter
+import edu.ucundinamarca.workshop.core.ui.components.AutoSwipeCarousel
+import edu.ucundinamarca.workshop.features.home.data.datasource.HomeMockDataSource
+import edu.ucundinamarca.workshop.features.home.domain.model.HomeInfo
 import kotlinx.coroutines.delay
 @Composable
 fun HomeScreen(
@@ -76,7 +79,15 @@ fun HomeScreen(
     val colorScheme = MaterialTheme.colorScheme
     val view = LocalView.current
     val context = view.context as Activity
-    val logoSize = 90.dp //icono IA chat
+
+    //Carrusel
+    val source = HomeMockDataSource()
+    val homeInfo = source.getMockData()
+    val banner = homeInfo.bannerUrl
+    AutoSwipeCarousel(imageUrls = banner)
+
+    //icono IA chat
+    val logoSize = 90.dp
     val logoURL = "https://drive.google.com/uc?export=download&id=1ta_LZLRpatap0KTaTsL_0OFB2PWkMnoc"
 
     //variables nuevas para el boton de evaluar
