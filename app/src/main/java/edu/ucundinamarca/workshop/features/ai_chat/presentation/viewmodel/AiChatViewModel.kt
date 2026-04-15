@@ -7,6 +7,7 @@ import edu.ucundinamarca.workshop.features.ai_chat.domain.model.AiMessage
 import edu.ucundinamarca.workshop.features.ai_chat.domain.repository.AiProvider
 import edu.ucundinamarca.workshop.features.ai_chat.domain.repository.AppContextProvider
 import edu.ucundinamarca.workshop.features.ai_chat.domain.repository.ChatRepository
+import edu.ucundinamarca.workshop.features.home.data.datasource.HomeMockDataSource
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.CancellationException
@@ -29,7 +30,8 @@ sealed class AiChatEvent {
 class AiChatViewModel @Inject constructor(
     private val aiProvider: AiProvider,
     private val chatRepo: ChatRepository,
-    private val contextProvider: AppContextProvider
+    private val contextProvider: AppContextProvider,
+    private val homeMockDataSource: HomeMockDataSource
 ) : ViewModel() {
 
     private val _state = MutableStateFlow(AiChatState())
@@ -54,6 +56,7 @@ class AiChatViewModel @Inject constructor(
                     selectChat(chats.first().id)
                 } else if (chats.isEmpty()) {
                     val newId = chatRepo.createChat("Chat ${System.currentTimeMillis()}")
+                    chatRepo.saveMessage(newId, createWelcomeMessage())
                     selectChat(newId)
                 }
             }
@@ -64,6 +67,11 @@ class AiChatViewModel @Inject constructor(
         _state.update { it.copy(currentChatId = chatId) }
         viewModelScope.launch {
             chatRepo.getMessages(chatId).collectLatest { messages ->
+
+                if(messages.isEmpty()){
+                    chatRepo.saveMessage(chatId, createWelcomeMessage())
+                }
+
                 _state.update { it.copy(messages = messages) }
             }
         }
@@ -92,5 +100,21 @@ class AiChatViewModel @Inject constructor(
                 _state.update { it.copy(isLoading = false) }
             }
         }
+    }
+
+    //mensaje de bienvenida al IAchat
+    private fun createWelcomeMessage(): AiMessage {
+        val eventTitle = homeMockDataSource.getMockData().eventTitle
+
+        val message ="¡Hola! 👋 Soy tu asistente de IA para el X WorkShop \uD83C\uDF93 \n"+
+                "$eventTitle\n"+
+                " \n"+
+                "¿En qué puedo ayudarte hoy?"
+    .trimIndent()
+
+        return AiMessage(
+            content = message,
+            role = AiMessage.Role.ASSISTANT
+        )
     }
 }

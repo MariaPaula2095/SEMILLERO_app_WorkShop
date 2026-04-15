@@ -4,6 +4,7 @@ import edu.ucundinamarca.workshop.features.home.domain.model.HomeInfo
 import edu.ucundinamarca.workshop.features.home.domain.model.SocialLinksInfo
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.Serializable
+import javax.inject.Inject
 
 @Serializable
 private data class HomeInfoMock(
@@ -24,7 +25,7 @@ private data class HomeInfoMock(
     val instagramIconUrl: String
 )
 
-class HomeMockDataSource {
+class HomeMockDataSource @Inject constructor() {
     fun getMockData(): HomeInfo {
         val inputStream = javaClass.getResourceAsStream("home_info_mock.json")
             ?: throw IllegalStateException("Mock JSON not found in package")

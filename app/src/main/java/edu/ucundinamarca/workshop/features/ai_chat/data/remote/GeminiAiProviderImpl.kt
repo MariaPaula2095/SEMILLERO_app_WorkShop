@@ -14,7 +14,7 @@ class GeminiAiProviderImpl @Inject constructor(
     private val generativeModel: GenerativeModel
 ) : AiProvider {
 
-    override fun chat(messages: List<AiMessage>, systemContext: String?): Flow<String> = flow {
+    override fun chat(messages: List<AiMessage>, systemContext: String?): Flow<String> = flow { //
         if (edu.ucundinamarca.workshop.BuildConfig.DEBUG) {
             Log.d("GeminiAiProvider", "Starting chat flow with ${messages.size} messages; systemContext present=${!systemContext.isNullOrBlank()}")
         }
