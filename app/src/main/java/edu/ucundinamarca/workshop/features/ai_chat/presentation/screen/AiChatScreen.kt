@@ -132,7 +132,9 @@ fun ChatInputBar(
 ) {
     Surface(
         tonalElevation = 8.dp,
-        modifier = modifier.fillMaxWidth(),
+        modifier = modifier
+            .fillMaxWidth()
+            .imePadding(),
         color = MaterialTheme.colorScheme.surface
     ) {
         Row(
