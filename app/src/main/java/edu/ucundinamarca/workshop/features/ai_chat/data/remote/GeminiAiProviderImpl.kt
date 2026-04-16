@@ -28,8 +28,26 @@ class GeminiAiProviderImpl @Inject constructor(
         val chat = generativeModel.startChat(history)
         val lastMessage = messages.lastOrNull()?.content ?: ""
 
+        /*
         val prompt = if (!systemContext.isNullOrBlank()) {
             "Contexto de la App:\n$systemContext\n\nPregunta del usuario: $lastMessage"
+        } else {
+            lastMessage
+        }
+
+         */
+        val prompt = if (!systemContext.isNullOrBlank()) {
+            """
+                Usa el siguiente contexto de la aplicación para responder al usuario.
+                Prioriza esta información cuando la pregunta esté relacionada con el workshop, el evento o la app.
+                Si la respuesta no está en el contexto, responde de forma útil sin inventar información.
+            
+                CONTEXTO DE LA APP:
+                $systemContext
+            
+                PREGUNTA DEL USUARIO:
+                $lastMessage
+            """.trimIndent()
         } else {
             lastMessage
         }
