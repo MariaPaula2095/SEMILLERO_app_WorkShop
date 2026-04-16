@@ -55,7 +55,20 @@
   {
     "id": "taller3",
     "startTime": "10:00 AM",
-    "endTime": "11:00 AM",
+    "endTime": "11:30 AM",
+    "title": "Retos en base a los talleres magistrales",
+    "description": "",
+    "speaker": "Gestores de la facultad",
+    "location": "Auditorio Bienestar, Salon C-101,C-213,C-214",
+    "type": "General",
+    "iconUrl": "https://drive.google.com/uc?export=download&id=1JpZsLtWdUrkJiWVbuCTtBno8v4nqA7Oc",
+    "registrationUrl": "",
+    "category": "WORKSHOPS"
+  },
+  {
+    "id": "taller4",
+    "startTime": "10:00 AM",
+    "endTime": "11:30 AM",
     "title": "Microsoft M365 Copilot and Agents Primary Solution Play",
     "description": "",
     "speaker": "Ing. Luis Fernando Nates Diaz",
@@ -66,9 +79,9 @@
     "category": "WORKSHOPS"
   },
   {
-    "id": "taller4",
+    "id": "taller5",
     "startTime": "10:00 AM",
-    "endTime": "11:00 AM",
+    "endTime": "11:30 AM",
     "title": "VibeE Coding: De la idea a la solución en minutos",
     "description": "",
     "speaker": "Ing. Wilber Hernando García",
@@ -79,9 +92,9 @@
     "category": "WORKSHOPS"
   },
   {
-    "id": "taller5",
+    "id": "taller6",
     "startTime": "10:00 AM",
-    "endTime": "11:00 AM",
+    "endTime": "11:30 AM",
     "title": "Las matemáticas detrás del aprendizaje automático: construyamos un perceptrón en Excel",
     "description": "",
     "speaker": "Dr. Diego Leonardo Hernández Bustos",
@@ -92,9 +105,9 @@
     "category": "WORKSHOPS"
   },
   {
-    "id": "taller6",
+    "id": "taller7",
     "startTime": "10:00 AM",
-    "endTime": "11:00 AM",
+    "endTime": "11:30 AM",
     "title": "Despliegue de Ecosistemas de Realidad Aumentada sobre Estándares Web",
     "description": "",
     "speaker": "Mariana Pinzón y Nicolás Lopez",
@@ -105,9 +118,9 @@
     "category": "WORKSHOPS"
   },
   {
-    "id": "taller7",
+    "id": "taller8",
     "startTime": "10:00 AM",
-    "endTime": "11:00 AM",
+    "endTime": "11:30 AM",
     "title": "Construyendo apps móviles escalables desde cero",
     "description": "",
     "speaker": "Diego Pinzón y Santiago Rodriguez",
@@ -118,9 +131,9 @@
     "category": "WORKSHOPS"
   },
   {
-    "id": "taller8",
+    "id": "taller9",
     "startTime": "10:00 AM",
-    "endTime": "11:00 AM",
+    "endTime": "11:30 AM",
     "title": "La ciberseguridad en el entorno laboral",
     "description": "",
     "speaker": "Ing Lady Carolina Gamarra",
@@ -131,9 +144,9 @@
     "category": "WORKSHOPS"
   },
   {
-    "id": "taller9",
+    "id": "taller10",
     "startTime": "10:00 AM",
-    "endTime": "11:00 AM",
+    "endTime": "11:30 AM",
     "title": "LA IA como agente transformados del aprendizaje",
     "description": "",
     "speaker": "Ing. Jorge Andrés Rodríguez Rodríguez Carrizosa",
@@ -144,28 +157,15 @@
     "category": "WORKSHOPS"
   },
   {
-    "id": "taller10",
+    "id": "taller11",
     "startTime": "10:00 AM",
-    "endTime": "11:00 AM",
+    "endTime": "11:30 AM",
     "title": "Deepseek y la Revolución de los Modelos Libres: Democratizando la Inteligencia Artificial.",
     "description": "Hibrido",
     "speaker": "Ing. Fabio Alejandro Sastoque Ing. Jesus Antonio Lopez Sotelo",
     "location": "C-314",
     "type": "General",
     "iconUrl": "https://drive.google.com/uc?export=download&id=1JMQg2q5St20S3ruWShVjM5W9q2UYSWAg",
-    "registrationUrl": "",
-    "category": "WORKSHOPS"
-  },
-  {
-    "id": "taller11",
-    "startTime": "10:00 AM",
-    "endTime": "11:00 AM",
-    "title": "Retos en base a los talleres magistrales",
-    "description": "",
-    "speaker": "Gestores de la facultad",
-    "location": "Auditorio Bienestar, Salon C-101,C-213,C-214",
-    "type": "General",
-    "iconUrl": "https://drive.google.com/uc?export=download&id=1JpZsLtWdUrkJiWVbuCTtBno8v4nqA7Oc",
     "registrationUrl": "",
     "category": "WORKSHOPS"
   },
