@@ -27,19 +27,6 @@
     "category": "CONFERENCES"
   },
   {
-    "id": "conf3",
-    "startTime": "10:00 AM",
-    "endTime": "11:00 AM",
-    "title": "Retos en base a los talleres magistrales",
-    "description": "",
-    "speaker": "Gestores de la facultad",
-    "location": "Auditorio Bienestar, Salon C-101,C-213,C-214",
-    "type": "General",
-    "iconUrl": "AGREGAR ICONO",
-    "registrationUrl": "",
-    "category": "WORKSHOPS"
-  },
-  {
     "id": "taller1",
     "startTime": "08:30 AM",
     "endTime": "10:00 AM",
@@ -166,6 +153,19 @@
     "location": "C-314",
     "type": "General",
     "iconUrl": "https://drive.google.com/uc?export=download&id=1JMQg2q5St20S3ruWShVjM5W9q2UYSWAg",
+    "registrationUrl": "",
+    "category": "WORKSHOPS"
+  },
+  {
+    "id": "taller11",
+    "startTime": "10:00 AM",
+    "endTime": "11:00 AM",
+    "title": "Retos en base a los talleres magistrales",
+    "description": "",
+    "speaker": "Gestores de la facultad",
+    "location": "Auditorio Bienestar, Salon C-101,C-213,C-214",
+    "type": "General",
+    "iconUrl": "https://drive.google.com/uc?export=download&id=1JpZsLtWdUrkJiWVbuCTtBno8v4nqA7Oc",
     "registrationUrl": "",
     "category": "WORKSHOPS"
   },
