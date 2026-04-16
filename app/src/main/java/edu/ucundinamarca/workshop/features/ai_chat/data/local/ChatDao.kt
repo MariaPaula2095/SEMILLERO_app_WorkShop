@@ -15,7 +15,7 @@ interface ChatDao {
     suspend fun deleteChat(chatId: String)
 
     @Query("SELECT * FROM messages WHERE chatId = :chatId ORDER BY timestamp ASC")
-    fun getMessagesForChat(chatId: String): Flow<List<MessageEntity>>
+    fun getMessagesForChat(chatId: String): Flow<List<MessageEntity>> //
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertMessage(message: MessageEntity)

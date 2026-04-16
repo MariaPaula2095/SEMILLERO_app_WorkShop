@@ -42,6 +42,11 @@ fun AiChatScreen(
                         )
                     }
                 },
+                colors = TopAppBarDefaults.topAppBarColors(
+                    containerColor = MaterialTheme.colorScheme.primary,
+                    titleContentColor = MaterialTheme.colorScheme.onPrimary,
+                    navigationIconContentColor = MaterialTheme.colorScheme.onPrimary
+                )
             )
         },
         contentWindowInsets = WindowInsets.statusBars
@@ -132,7 +137,9 @@ fun ChatInputBar(
 ) {
     Surface(
         tonalElevation = 8.dp,
-        modifier = modifier.fillMaxWidth(),
+        modifier = modifier
+            .fillMaxWidth()
+            .imePadding(),
         color = MaterialTheme.colorScheme.surface
     ) {
         Row(
