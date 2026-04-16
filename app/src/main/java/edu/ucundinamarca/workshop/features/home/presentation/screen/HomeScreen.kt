@@ -59,6 +59,13 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 import coil3.compose.rememberAsyncImagePainter
+
+import edu.ucundinamarca.workshop.core.ui.components.WorkshopCarousel
+import edu.ucundinamarca.workshop.features.home.data.datasource.HomeMockDataSource
+import edu.ucundinamarca.workshop.features.home.domain.model.HomeInfo
+import coil3.compose.AsyncImage
+import androidx.compose.ui.layout.ContentScale
+
 import kotlinx.coroutines.delay
 @Composable
 fun HomeScreen(
@@ -76,7 +83,9 @@ fun HomeScreen(
     val colorScheme = MaterialTheme.colorScheme
     val view = LocalView.current
     val context = view.context as Activity
-    val logoSize = 90.dp //icono IA chat
+
+    //icono IA chat
+    val logoSize = 90.dp
     val logoURL = "https://drive.google.com/uc?export=download&id=1ta_LZLRpatap0KTaTsL_0OFB2PWkMnoc"
 
     //variables nuevas para el boton de evaluar
@@ -174,13 +183,15 @@ fun HomeScreen(
                         .verticalScroll(rememberScrollState())
                         .padding(paddingValues)
                 ) {
+
                     HeroHeader(
-                        bannerUrl = uiState.bannerUrl,
+                        bannerUrls = uiState.bannerUrls,
                         logoUrl = uiState.logoUrl,
                         title = uiState.eventTitle,
                         onMarathonClick = { onNavigateToWebView(uiState.marathonLink) },
                         onRegisterClick = onNavigateToForm
                     )
+
 
                     Spacer(modifier = Modifier.height(spacing.medium))
 

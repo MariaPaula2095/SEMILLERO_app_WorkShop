@@ -16,7 +16,7 @@ android {
     defaultConfig {
         applicationId = "edu.ucundinamarca.workshop"
         minSdk = 26
-        targetSdk = 36
+        targetSdk = 35
         versionCode = 1
         versionName = "2.0.0"
 
@@ -77,6 +77,7 @@ dependencies {
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
     implementation(libs.androidx.compose.material.icons.extended)
+    implementation(libs.androidx.compose.foundation)
 
     // Navigation
     implementation(libs.androidx.navigation.compose)
@@ -95,7 +96,8 @@ dependencies {
     // Coil 3
     implementation(libs.coil.compose)
     implementation(libs.coil.network.okhttp)
-    implementation("io.coil-kt:coil-compose:2.6.0") //para imagen robot IA chat
+    implementation("io.coil-kt:coil-compose:2.6.0")
+    implementation("io.coil-kt:coil:2.6.0")
 
     // Gemini AI
     implementation(libs.google.ai.client)

@@ -3,7 +3,8 @@ package edu.ucundinamarca.workshop.features.home.presentation.viewmodel
 data class HomeUiState(
     val isLoading: Boolean = false,
     val isOffline: Boolean = false,
-    val bannerUrl: String = "",
+    //val bannerUrl: String = "",
+    val bannerUrls: List<String> = emptyList(),
     val logoUrl: String = "",
     val eventTitle: String = "",
     val eventDate: String = "",

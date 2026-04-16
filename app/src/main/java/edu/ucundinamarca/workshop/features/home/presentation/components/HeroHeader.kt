@@ -15,10 +15,13 @@ import coil3.compose.AsyncImage
 import edu.ucundinamarca.workshop.core.ui.theme.WorkshopTheme
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.sp
+import edu.ucundinamarca.workshop.core.ui.components.WorkshopCarousel
+import androidx.compose.foundation.background
+import androidx.compose.ui.graphics.Color
 
 @Composable
 fun HeroHeader(
-    bannerUrl: String,
+    bannerUrls: List<String>,
     logoUrl: String,
     title: String,
     onMarathonClick: () -> Unit,
@@ -37,6 +40,30 @@ fun HeroHeader(
             shadowElevation = 8.dp
         ) {
             Box(modifier = Modifier.fillMaxSize()) {
+                WorkshopCarousel(
+                    itemCount = bannerUrls.size,
+                    modifier = Modifier.fillMaxSize()
+                ) { page ->
+
+                    Box(modifier = Modifier.fillMaxSize()) {
+
+                        AsyncImage(
+                            model = bannerUrls[page],
+                            contentDescription = null,
+                            modifier = Modifier
+                                .fillMaxSize()
+                                .alpha(0.45f),
+                            contentScale = ContentScale.Crop
+                        )
+
+                        Box(
+                            modifier = Modifier
+                                .fillMaxSize()
+                                .background(Color.White.copy(alpha = 0.15f))
+                        )
+                    }
+                }
+                /*
                 AsyncImage(
                     model = bannerUrl,
                     contentDescription = null,
@@ -45,6 +72,8 @@ fun HeroHeader(
                         .alpha(0.45f),
                     contentScale = ContentScale.Crop
                 )
+
+                 */
 
                 Column(
                     modifier = Modifier

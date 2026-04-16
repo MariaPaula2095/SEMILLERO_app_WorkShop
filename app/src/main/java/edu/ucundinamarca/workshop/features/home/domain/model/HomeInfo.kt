@@ -1,7 +1,7 @@
 package edu.ucundinamarca.workshop.features.home.domain.model
 
 data class HomeInfo(
-    val bannerUrl: String,
+    val bannerUrls: List<String>,
     val logoUrl: String,
     val eventTitle: String,
     val eventDate: String,

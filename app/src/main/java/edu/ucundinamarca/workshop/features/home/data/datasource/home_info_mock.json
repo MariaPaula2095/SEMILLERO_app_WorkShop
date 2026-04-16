@@ -1,5 +1,11 @@
 {
-  "bannerUrl": "https://drive.google.com/uc?export=download&id=15JeZuTEqY402xVM4n3YvKqChiO2N_osi",
+  "bannerUrls": [
+    "https://drive.google.com/uc?export=download&id=1rCZiEDif0j4aPAgOTBCJpGzueQsCTWhl",
+    "https://drive.google.com/uc?export=download&id=17cu5OK5GGmjJyaPBIXtbdmfroHzYtYb-",
+    "https://drive.google.com/uc?export=download&id=1DiYKpNwwHtiPm_l7W4GJJEf1fB6SCGcS",
+    "https://drive.google.com/uc?export=download&id=13B8h0p3lZi61oW99dRZuPwtV8QvAL9ms",
+    "https://drive.google.com/uc?export=download&id=1ai6nPETkvAfr-6-b59I2fHuzVxPrN1Cy"
+  ],
   "logoUrl": "https://drive.google.com/uc?export=download&id=1KrCc60ozVd7MJQw3Ns-la04O19Nb7bQG",
   "eventTitle": "Dialogando en el Mundo del Software \nIA con uso ético para soluciones translocales",
   "eventDate": "23 de Abril, 2026",
