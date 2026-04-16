@@ -59,9 +59,13 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 import coil3.compose.rememberAsyncImagePainter
-import edu.ucundinamarca.workshop.core.ui.components.AutoSwipeCarousel
+
+import edu.ucundinamarca.workshop.core.ui.components.WorkshopCarousel
 import edu.ucundinamarca.workshop.features.home.data.datasource.HomeMockDataSource
 import edu.ucundinamarca.workshop.features.home.domain.model.HomeInfo
+import coil3.compose.AsyncImage
+import androidx.compose.ui.layout.ContentScale
+
 import kotlinx.coroutines.delay
 @Composable
 fun HomeScreen(
@@ -79,12 +83,6 @@ fun HomeScreen(
     val colorScheme = MaterialTheme.colorScheme
     val view = LocalView.current
     val context = view.context as Activity
-
-    //Carrusel
-    val source = HomeMockDataSource()
-    val homeInfo = source.getMockData()
-    val banner = homeInfo.bannerUrl
-    AutoSwipeCarousel(imageUrls = banner)
 
     //icono IA chat
     val logoSize = 90.dp
@@ -185,13 +183,15 @@ fun HomeScreen(
                         .verticalScroll(rememberScrollState())
                         .padding(paddingValues)
                 ) {
+
                     HeroHeader(
-                        bannerUrl = uiState.bannerUrl,
+                        bannerUrls = uiState.bannerUrls,
                         logoUrl = uiState.logoUrl,
                         title = uiState.eventTitle,
                         onMarathonClick = { onNavigateToWebView(uiState.marathonLink) },
                         onRegisterClick = onNavigateToForm
                     )
+
 
                     Spacer(modifier = Modifier.height(spacing.medium))
 

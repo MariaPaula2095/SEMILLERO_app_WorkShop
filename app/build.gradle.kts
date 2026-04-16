@@ -11,7 +11,7 @@ plugins {
 
 android {
     namespace = "edu.ucundinamarca.workshop"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "edu.ucundinamarca.workshop"

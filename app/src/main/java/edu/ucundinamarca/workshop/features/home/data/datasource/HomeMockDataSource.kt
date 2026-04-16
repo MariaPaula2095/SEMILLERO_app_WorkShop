@@ -7,7 +7,7 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 private data class HomeInfoMock(
-    val bannerUrl: List<String>,
+    val bannerUrls: List<String>,
     val logoUrl: String,
     val eventTitle: String,
     val eventDate: String,
@@ -34,7 +34,7 @@ class HomeMockDataSource {
         val mock = Json.decodeFromString<HomeInfoMock>(jsonString)
         
         return HomeInfo(
-            bannerUrl = mock.bannerUrl,
+            bannerUrls = mock.bannerUrls,
             logoUrl = mock.logoUrl,
             eventTitle = mock.eventTitle,
             eventDate = mock.eventDate,

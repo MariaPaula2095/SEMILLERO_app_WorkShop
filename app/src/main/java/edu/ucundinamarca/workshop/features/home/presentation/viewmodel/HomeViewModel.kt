@@ -51,7 +51,7 @@ class HomeViewModel @Inject constructor(
                         currentState.copy(
                             isLoading = false,
                             eventTitle = info.eventTitle,
-                            bannerUrl = info.bannerUrl,
+                            bannerUrls = info.bannerUrls,
                             logoUrl = info.logoUrl,
                             eventDate = info.eventDate,
                             startTime = info.startTime,
