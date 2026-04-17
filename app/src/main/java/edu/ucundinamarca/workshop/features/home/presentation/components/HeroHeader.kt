@@ -122,7 +122,8 @@ fun HeroHeader(
                 .fillMaxWidth(),
             horizontalArrangement = Arrangement.spacedBy(spacing.small)
         ) {
-            Button(
+            //Comentado por des-uso
+            /*Button(
                 onClick = onMarathonClick,
                 modifier = Modifier
                     .weight(1f)
@@ -139,13 +140,18 @@ fun HeroHeader(
                     lineHeight = MaterialTheme.typography.labelSmall.lineHeight
                 )
             }
-            
+            */
             OutlinedButton(
                 onClick = onRegisterClick,
                 modifier = Modifier
                     .weight(1f)
                     .height(48.dp),
                 shape = MaterialTheme.shapes.medium,
+                //cambio de color
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = MaterialTheme.colorScheme.primary
+                )
+                //
             ) {
                 Text(
                     "Inscribirse al\nWorkshop",
