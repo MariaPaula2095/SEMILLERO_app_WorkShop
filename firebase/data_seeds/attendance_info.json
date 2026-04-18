@@ -1,11 +1,11 @@
 {
   "id": "main_attendance_form",
-  "title": "Registro de Asistencia - Workshop 2026",
+  "title": "Workshop 2026",
   "description": "Por favor, completa los siguientes datos para registrar tu asistencia y participar en nuestra encuesta sobre IA y Seguridad.",
   "questions": [
     {
       "id": "institution",
-      "label": "Institución",
+      "label": "Institución a la que pertenece",
       "type": "DROPDOWN",
       "isRequired": true,
       "options": [
@@ -15,31 +15,54 @@
       "placeholder": "Selecciona tu institución"
     },
     {
+      "id": "extension",
+      "label": "Extension",
+      "type": "DROPDOWN",
+      "isRequired": true,
+      "options": [
+        "Chía",
+        "Facatativá",
+        "Fusagasugá",
+        "Soacha",
+        "Ubaté",
+        "Girardot",
+        "Otras"
+      ],
+      "placeholder": "Selecciona tu extensión"
+    },
+    {
       "id": "academic_program",
       "label": "Programa Académico",
       "type": "DROPDOWN",
       "isRequired": true,
       "options": [
-        "Ingeniería Industrial Chía",
-        "Ingeniería Industrial Soacha",
-        "Ingeniería de Sistemas y Computación Chía",
-        "Ingeniería de Sistemas y Computación Ubaté",
-        "Ingeniería de Sistemas y Computación Fusa",
-        "Ingeniería de Sistemas y Computación Faca",
-        "Ingeniería Mecatrónica",
+        "Ingeniería de Software",
         "Ingeniería Electrónica",
-        "Ingeniería de Software Soacha",
-        "Ingeniería de Software Girardot",
-        "Otro"
+        "Ingeniería Industrial",
+        "Ingeniería Mecatrónica",
+        "Ingeniería de Sistemas y Computación ",
+        "Otras"
       ],
       "placeholder": "Selecciona tu programa"
+    },
+    {
+      "id": "modality",
+      "label": "Modalidad en la que quieres participar",
+      "type": "DROPDOWN",
+      "isRequired": true,
+      "options": [
+        "Maratón de programación",
+        "Talleres",
+        "Reto"
+      ],
+      "placeholder": "Selecciona tu modalidad"
     },
     {
       "id": "full_name",
       "label": "Nombre Completo",
       "type": "TEXT",
       "isRequired": true,
-      "placeholder": "Ej. Juan Pérez",
+      "placeholder": "Ej. Sandra Flores",
       "validation": {
         "minLength": 3,
         "errorMessage": "El nombre debe tener al menos 3 caracteres"

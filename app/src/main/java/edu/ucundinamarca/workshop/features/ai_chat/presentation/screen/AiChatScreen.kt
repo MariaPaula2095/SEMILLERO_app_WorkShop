@@ -114,7 +114,7 @@ fun ChatMessageItem(message: AiMessage) {
                 .widthIn(max = 280.dp)
         ) {
             Text(
-                text = if (isUser) "Tú" else "Gemini",
+                text = if (isUser) "Tú" else "  ", //"Gemini"
                 style = MaterialTheme.typography.labelSmall,
                 color = textColor.copy(alpha = 0.7f)
             )

@@ -114,7 +114,7 @@ fun HomeScreen(
         topBar = { WorkshopAppBar() },
         containerColor = MaterialTheme.colorScheme.background,
         floatingActionButton = {
-            //Icono de Ia Chat con 3 saltos cada 2s
+            //Icono de Ia Chat con 3 saltos cada 4s
             val offsetY = remember { Animatable(0f) }
 
             LaunchedEffect(Unit) {
@@ -142,7 +142,7 @@ fun HomeScreen(
                             )
                         )
                     }
-                    delay(2000)
+                    delay(4000)
                 }
 
             }
